@@ -1,16 +1,90 @@
-<html lang="en" class="js touch">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Scootie</title>
-    <link rel="stylesheet " type="text/css " href="assets/css/main.css ">
-    <link rel="stylesheet " type="text/css " href="assets/css/bootstrap.css ">
+    <title>E-Scooter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="assets/js/mordernizer.custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body data-hijacking="off" data-animation="none" data-spy="scroll" data-target="">
+    <nav id="topNav" class="navbar navbar-inverse navbar-fixed-top" style="background-color: transparent">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img id="logo" src="assets/images/raytroniksLogo.png" /></a>
+                <ul class="nav navbar-nav" id="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+            </div>
 
-    <script></script>
+        </div>
+    </nav>
+    <div class="container" id="enterPage">
+        <div class="overlay">
+            <div class="row text-container">
+                <h1 class="tlt text-center" id="titleText">Scoot-E-Bike</h1>
+                <p class="buyNow">Order My Scootie Bike Now! Free Shipping!</p>
+            </div>
+            <div class="scroll-down svg" id="home-scroll-down">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_2" x="0px" y="0px" viewBox="0 0 25.166666 37.8704414" enable-background="new 0 0 25.166666 37.8704414" xml:space="preserve">
+        <path class="stroke" fill="none" stroke="#c7c4b8" stroke-width="2.5" stroke-miterlimit="10" d="M12.5833445 36.6204414h-0.0000229C6.3499947 36.6204414 1.25 31.5204487 1.25 25.2871208V12.5833216C1.25 6.3499947 6.3499951 1.25 12.5833216 1.25h0.0000229c6.2333269 0 11.3333216 5.0999947 11.3333216 11.3333216v12.7037992C23.916666 31.5204487 18.8166714 36.6204414 12.5833445 36.6204414z"></path>
+        <path class="scroller" fill="#c7c4b8" d="M13.0833359 19.2157116h-0.9192753c-1.0999985 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994 0.8999987-1.9999981 1.9999971-1.9999981h0.9192753c1.0999985 0 1.9999981 0.8999987 1.9999981 1.9999981v5.428606C15.083334 18.315712 14.1833344 19.2157116 13.0833359 19.2157116z"></path>
+    </svg><i class="icon icon-arrow-down"></i>
+            </div>
+        </div>
+        <video poster="assets/images/bikes.png" id="bgvid" playsinline autoplay muted loop>
+            <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+        <source src="assets/videos/bikes.mp4" type="video/mp4">
+        <source src="assets/videos/bikes.webm" type="video/webm">
+        <source src="assets/videos/bikes.ogv" type="video/ogv">
+        </video>
+    </div>
+
+    <div class="container" id="homePage">
+        <section class="section section-3">
+            <p class="text-wrapper" style="display: none">
+                Even revealwhole spansof textwithinlong paragraphswhile the userscrollswith jScrollability.
+            </p>
+        </section>
+        <div class="row" id="textBorder">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1 class="text-center"></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4" id="leftSide">
+            </div>
+            <div class="col-md-4" id="rightSide">
+                <h3>Title goes here</h3>
+                <p>SAN FRANCISCO Thank you for embarking on this creative journey. class of 95 DETROIT Fuck all this dick swinging contest. We all gon be dead in 100 Years. Let the kids have the music. My favorite song this year Happy Birthday babe I got
+                    rid of my phone so I can have air to create Apple give Jay his check for Tidal now and stop trying to act like you Steve. GLOW Ask yourself Why did you love music in the first place and what can you do to add to the story. EVERYBODY
+                    LOOKING Me and Drake both listen to Frank. Radio has to support amazing artists.
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="container" id="homePage">
+    </div>
+    -->
+
+    <script src="http://jschr.github.io/textillate/assets/jquery.lettering.js"></script>
+    <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
+    <script src="assets/js/main.js "></script>
+
 </body>
 
 </html>

@@ -1,236 +1,351 @@
-/*************************** OPENING SEQUENCE ********************************/
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i,400');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body {
+    position: relative;
+}
 
-.os-phrases h2 {
-    font-family: 'Dosis', 'Lato', sans-serif;
-    font-size: 70px;
-    font-weight: 200;
+#enterPage {
+    height: 100vh;
+}
+
+#homePage {
+    background: #030B28;
+    height: 100vw;
     width: 100%;
-    overflow: hidden;
-    text-transform: uppercase;
-    padding: 0;
     margin: 0;
-    position: absolute;
-    top: 0;
+    color: white;
+}
+
+#logo {
+    position: relative;
+    top: -7px;
+    width: 100%;
     left: 0;
-    letter-spacing: 14px;
-    text-align: center;
 }
 
-.os-phrases h2,
-.os-phrases h2>span {
-    height: 100%;
-    /* Centering with flexbox */
+#topNav {
+    border: none;
+}
+
+#nav {
+    float: right;
+    margin-left: 40vw;
     display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
 }
 
-.os-phrases h2>span {
-    margin: 0 15px;
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
 }
 
-.os-phrases h2>span>span {
-    display: inline-block;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    perspective: 1000px;
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
+div.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    opacity: .8;
+    z-index: 999;
+    left: 0;
+    right: 0;
 }
 
-.os-phrases h2>span>span>span {
-    display: inline-block;
-    color: hsla(0, 0%, 0%, 0);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-animation: OpeningSequence 5.2s linear forwards;
-    -moz-animation: OpeningSequence 5.2s linear forwards;
-    animation: OpeningSequence 5.2s linear forwards;
+div.text-container {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: whitesmoke;
+    opacity: 1;
 }
 
-.os-phrases h2:nth-child(2)>span>span>span {
-    -webkit-animation-delay: 5s;
-    -moz-animation-delay: 5s;
-    animation-delay: 5s;
+div.text-container h1 {
+    font-size: 10rem;
+    display: inherit;
+    color: indianred;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top: 20%;
 }
 
-.os-phrases h2:nth-child(3)>span>span>span {
-    -webkit-animation-delay: 10s;
-    -moz-animation-delay: 10s;
-    animation-delay: 10s;
+div.text-container p.buyNow {
+    position: absolute;
+    bottom: 24%;
+    right: 10%;
 }
 
-.os-phrases h2:nth-child(4)>span>span>span {
-    -webkit-animation-delay: 15s;
-    -moz-animation-delay: 15s;
-    animation-delay: 15s;
+p.buyNow {
+    color: azure;
+    border-radius: 10px;
+    border: 4.3px solid;
+    padding: 20px;
+    transition: 0.3s all;
 }
 
-.os-phrases h2:nth-child(5)>span>span>span {
-    font-size: 150px;
-    -webkit-animation-delay: 21s;
-    -moz-animation-delay: 21s;
-    animation-delay: 21s;
-    -webkit-animation-duration: 8s;
-    -moz-animation-duration: 8s;
-    animation-duration: 8s;
+p.buyNow::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: red;
+    z-index: -1;
 }
 
-.os-phrases h2:nth-child(6)>span>span>span {
-    -webkit-animation-delay: 30s;
-    -moz-animation-delay: 30s;
-    animation-delay: 30s;
-}
-
-.os-phrases h2:nth-child(7)>span>span>span {
-    -webkit-animation-delay: 34s;
-    -moz-animation-delay: 34s;
-    animation-delay: 34s;
-}
-
-@-webkit-keyframes OpeningSequence {
+@keyframes bobble {
     0% {
-        text-shadow: 0 0 50px #fff;
-        letter-spacing: 80px;
-        opacity: 0;
-        -webkit-transform: rotateY(-90deg);
+        transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;
     }
     50% {
-        text-shadow: 0 0 1px #fff;
-        letter-spacing: 14px;
-        opacity: 0.8;
-        -webkit-transform: rotateY(0deg);
-    }
-    85% {
-        text-shadow: 0 0 1px #fff;
-        opacity: 0.8;
-        -webkit-transform: rotateY(0deg) translateZ(100px);
+        transform: translate3d(0px, 30px, 0px);
+        animation-timing-function: ease-out;
     }
     100% {
-        text-shadow: 0 0 10px #fff;
-        opacity: 0;
-        -webkit-transform: translateZ(130px);
-        pointer-events: none;
+        transform: translate3d(0px, 0px, 0px);
     }
 }
 
-@-moz-keyframes OpeningSequence {
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+div.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    margin-top: 10%;
+}
+
+#mainBtn {
+    border-radius: 90px;
+    padding: 10px 20px 10px 20px;
+    background: none;
+    border: 4px solid slategrey;
+    transition: all 0.3s;
+}
+
+#mainBtn:hover {
+    background: slategrey;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    bottom: 35px;
+    padding-left: 7px;
+    cursor: pointer;
+    z-index: 2;
+    color: #c7c4b8;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.scroll-down.svg svg {
+    width: 25px;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.scroll-down.svg .stroke {
+    stroke: #ADA99D;
+}
+
+.scroll-down.svg .scroller {
+    fill: #ADA99D;
+    -webkit-animation: updown 1s infinite;
+    -moz-animation: updown 1s infinite;
+    -o-animation: updown 1s infinite;
+    animation: updown 1s infinite;
+}
+
+@-webkit-keyframes updown {
     0% {
-        text-shadow: 0 0 50px #fff;
-        letter-spacing: 80px;
-        opacity: 0.2;
-        -moz-transform: rotateY(-90deg);
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
     50% {
-        text-shadow: 0 0 1px #fff;
-        letter-spacing: 14px;
-        opacity: 0.8;
-        -moz-transform: rotateY(0deg);
-    }
-    85% {
-        text-shadow: 0 0 1px #fff;
-        opacity: 0.8;
-        -moz-transform: rotateY(0deg) translateZ(100px);
+        -webkit-transform: translate(0, 5px);
+        transform: translate(0, 5px)
     }
     100% {
-        text-shadow: 0 0 10px #fff;
-        opacity: 0;
-        -moz-transform: translateZ(130px);
-        pointer-events: none;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
 }
 
-@keyframes OpeningSequence {
+@-moz-keyframes updown {
     0% {
-        text-shadow: 0 0 50px #fff;
-        letter-spacing: 80px;
-        opacity: 0.2;
-        transform: rotateY(-90deg);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
     50% {
-        text-shadow: 0 0 1px #fff;
-        letter-spacing: 14px;
-        opacity: 0.8;
-        transform: rotateY(0deg);
-    }
-    85% {
-        text-shadow: 0 0 1px #fff;
-        opacity: 0.8;
-        transform: rotateY(0deg) translateZ(100px);
+        -moz-transform: translate(0, 5px);
+        transform: translate(0, 5px)
     }
     100% {
-        text-shadow: 0 0 10px #fff;
-        opacity: 0;
-        transform: translateZ(130px);
-        pointer-events: none;
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
 }
 
-.os-phrases h2:nth-child(8)>span>span>span {
-    font-size: 30px;
-    -webkit-animation: FadeIn 4s linear 40s forwards;
-    -moz-animation: FadeIn 4s linear 40s forwards;
-    animation: FadeIn 4s linear 40s forwards;
-}
-
-@-webkit-keyframes FadeIn {
+@-o-keyframes updown {
     0% {
-        opacity: 0;
-        text-shadow: 0 0 50px #fff;
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0)
+    }
+    50% {
+        -o-transform: translate(0, 5px);
+        transform: translate(0, 5px)
     }
     100% {
-        opacity: 0.8;
-        text-shadow: 0 0 1px #fff;
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
 }
 
-@-moz-keyframes FadeIn {
+@keyframes updown {
     0% {
-        opacity: 0;
-        text-shadow: 0 0 50px #fff;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0)
+    }
+    50% {
+        -webkit-transform: translate(0, 5px);
+        transform: translate(0, 5px)
     }
     100% {
-        opacity: 0.8;
-        text-shadow: 0 0 1px #fff;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0)
     }
 }
 
-@keyframes FadeIn {
-    0% {
-        opacity: 0;
-        text-shadow: 0 0 50px #fff;
+#textBorder {
+    border-bottom: 10px solid slategrey;
+}
+
+@media screen and (max-device-width: 800px) {
+    html {
+        background: url(../images/bikes.png) #000 no-repeat center center fixed;
     }
-    100% {
-        opacity: 0.8;
-        text-shadow: 0 0 1px #fff;
+    #bgvid {
+        display: none;
     }
 }
 
 
-/* Bold words */
+/*----------- Large Screen --------- */
 
-.os-phrases h2:first-child .word3,
-.os-phrases h2:nth-child(2) .word2,
-.os-phrases h2:nth-child(4) .word2 {
-    font-weight: 600;
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    div.btn-container {
+        left: 46%;
+    }
+}
+
+
+/* ----------- Retina Screens ----------- */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    div.btn-container {
+        left: 46%;
+    }
+}
+
+
+/* IPad Portrait */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    div.btn-container {
+        left: 46%;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    div.btn-container {
+        left: 37%;
+    }
+}
+
+
+/* iPad */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    div.btn-container {
+        left: 43%;
+    }
+}
+
+
+/* iPad Pro */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    div.btn-container {
+        left: 45%;
+    }
+}
+
+@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    div.btn-container {
+        left: 47.5%;
+    }
+}
+
+@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    div.btn-container {
+        left: 47.9%;
+    }
 }
