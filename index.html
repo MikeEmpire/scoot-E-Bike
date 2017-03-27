@@ -8,47 +8,88 @@
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="assets/js/mordernizer.custom.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
 </head>
 
 <body data-hijacking="off" data-animation="none" data-spy="scroll" data-target="">
     <nav id="topNav" class="navbar navbar-inverse navbar-fixed-top" style="background-color: transparent">
         <div class="container-fluid">
+            <div class="container-nav" id="hamIcon" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <div class="navbar-header">
                 <a class="navbar-brand" href="#"><img id="logo" src="assets/images/raytroniksLogo.png" /></a>
-                <ul class="nav navbar-nav" id="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>
+                <!-- The overlay -->
+                <div id="myNav" class="overlay">
+
+                    <!-- Button to close the overlay navigation -->
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <!-- Overlay content -->
+                    <div class="overlay-content">
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Clients</a>
+                        <a href="#">Contact</a>
+                    </div>
+
+                </div>
+
+                <!-- Use any element to open/show the overlay navigation menu -->
+
             </div>
 
         </div>
     </nav>
     <div class="container" id="enterPage">
-        <div class="overlay">
+        <div class="overlay_2">
             <div class="row text-container">
                 <h1 class="tlt text-center" id="titleText">Scoot-E-Bike</h1>
-                <p class="buyNow">Order My Scootie Bike Now! Free Shipping!</p>
+                <svg height="9" width="500" class="path">
+                    <line x1="0" y1="0" x2="500" y2="0" style="stroke:rgb(255,0,0);stroke-width:9" /> Sorry, your browser does not support inline SVG.
+                </svg>
+                <p id="titleP" style="display: none">Presented by Raytroniks</p>
+                <section class="cd-intro">
+                    <div class="cd-intro-content mask-2">
+                        <div class="content-wrapper">
+                            <div>
+                                <div class="action-wrapper">
+                                    <a href="#0" class="cd-btn main-action btn btn-1 btn-1c">Order My Bike Now! Free Shipping!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="scroll-down svg" id="home-scroll-down">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_2" x="0px" y="0px" viewBox="0 0 25.166666 37.8704414" enable-background="new 0 0 25.166666 37.8704414" xml:space="preserve">
-        <path class="stroke" fill="none" stroke="#c7c4b8" stroke-width="2.5" stroke-miterlimit="10" d="M12.5833445 36.6204414h-0.0000229C6.3499947 36.6204414 1.25 31.5204487 1.25 25.2871208V12.5833216C1.25 6.3499947 6.3499951 1.25 12.5833216 1.25h0.0000229c6.2333269 0 11.3333216 5.0999947 11.3333216 11.3333216v12.7037992C23.916666 31.5204487 18.8166714 36.6204414 12.5833445 36.6204414z"></path>
-        <path class="scroller" fill="#c7c4b8" d="M13.0833359 19.2157116h-0.9192753c-1.0999985 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994 0.8999987-1.9999981 1.9999971-1.9999981h0.9192753c1.0999985 0 1.9999981 0.8999987 1.9999981 1.9999981v5.428606C15.083334 18.315712 14.1833344 19.2157116 13.0833359 19.2157116z"></path>
-    </svg><i class="icon icon-arrow-down"></i>
+            <path class="stroke" fill="none" stroke="#c7c4b8" stroke-width="2.5" stroke-miterlimit="10" d="M12.5833445 36.6204414h-0.0000229C6.3499947 36.6204414 1.25 31.5204487 1.25 25.2871208V12.5833216C1.25 6.3499947 6.3499951 1.25 12.5833216 1.25h0.0000229c6.2333269 0 11.3333216 5.0999947 11.3333216 11.3333216v12.7037992C23.916666 31.5204487 18.8166714 36.6204414 12.5833445 36.6204414z"></path>
+            <path class="scroller" fill="#c7c4b8" d="M13.0833359 19.2157116h-0.9192753c-1.0999985 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994 0.8999987-1.9999981 1.9999971-1.9999981h0.9192753c1.0999985 0 1.9999981 0.8999987 1.9999981 1.9999981v5.428606C15.083334 18.315712 14.1833344 19.2157116 13.0833359 19.2157116z"></path>
+          </svg><i class="icon icon-arrow-down"></i>
             </div>
         </div>
         <video poster="assets/images/bikes.png" id="bgvid" playsinline autoplay muted loop>
-            <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+        <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
         <source src="assets/videos/bikes.mp4" type="video/mp4">
         <source src="assets/videos/bikes.webm" type="video/webm">
         <source src="assets/videos/bikes.ogv" type="video/ogv">
-        </video>
+      </video>
     </div>
 
     <div class="container" id="homePage">
@@ -83,7 +124,20 @@
 
     <script src="http://jschr.github.io/textillate/assets/jquery.lettering.js"></script>
     <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
-    <script src="assets/js/main.js "></script>
+    <script src="assets/js/jquery.twentytwenty.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+                default_offset_pct: 0.7
+            });
+            $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
+                default_offset_pct: 0.3,
+                orientation: 'vertical'
+            });
+        });
+    </script>
 
 </body>
 

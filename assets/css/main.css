@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300i,400');
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans+Condensed:300|Oswald:300,400');
 body {
     position: relative;
 }
@@ -21,17 +19,127 @@ body {
     position: relative;
     top: -7px;
     width: 100%;
-    left: 0;
+    left: 10%;
 }
 
 #topNav {
     border: none;
+    margin-top: 3%;
 }
 
 #nav {
     float: right;
     margin-left: 40vw;
     display: -webkit-box;
+}
+
+
+/* The Overlay (background) */
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+
+/* Position the content inside the overlay */
+
+.container-nav {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#hamIcon {
+    float: right;
+    margin: 10px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: floralwhite;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#hamIcon:hover {
+    margin-top: 20px;
+    transition: 0.4s all;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+
+/* The navigation links inside the overlay */
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+
+/* Position the close button (top right corner) */
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
 video {
@@ -48,12 +156,24 @@ video {
     transition: 1s opacity;
 }
 
-div.overlay {
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2.5s linear forwards;
+    margin-top: -1%;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+div.overlay_2 {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background: #000;
-    opacity: .8;
+    background: url('../images/black-horizontal-stripes.png') repeat center;
     z-index: 999;
     left: 0;
     right: 0;
@@ -70,9 +190,14 @@ div.text-container {
 div.text-container h1 {
     font-size: 10rem;
     display: inherit;
-    color: indianred;
-    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    font-family: 'Dancing Script', cursive;
     margin-top: 20%;
+}
+
+#titleP {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 7px;
 }
 
 div.text-container p.buyNow {
@@ -81,23 +206,376 @@ div.text-container p.buyNow {
     right: 10%;
 }
 
-p.buyNow {
-    color: azure;
-    border-radius: 10px;
-    border: 4.3px solid;
-    padding: 20px;
-    transition: 0.3s all;
+
+/* -------------------------------- 
+
+General Style
+
+-------------------------------- */
+
+.cd-intro {
+    position: relative;
+    height: 20vh;
+    width: 100vw;
+    /* vertically align its content */
+    /* display: table; */
+    background: transparent;
+    overflow: hidden;
 }
 
-p.buyNow::after {
+.cd-intro-content {
+    /* vertically align inside its parent */
+    text-align: center;
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 5%;
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    right: 0%;
+    bottom: 10%;
+}
+
+.cd-intro-content h1 {
+    font-size: 2.4rem;
+    color: #ffffff;
+}
+
+.cd-intro-content p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 1em 0;
+    color: #6d7a97;
+}
+
+.cd-intro-content .action-wrapper {
+    display: inline-block;
+}
+
+.cd-intro-content .action-wrapper::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.cd-intro-content .action-wrapper>* {
+    float: left;
+}
+
+@media only screen and (min-width: 768px) {
+    .cd-intro-content h1 {
+        font-size: 5.2rem;
+        font-weight: 300;
+    }
+    .cd-intro-content p {
+        font-size: 1.6rem;
+        margin: 1.5em 0 1.9em;
+    }
+}
+
+.cd-btn {
+    display: inline-block;
+    padding: 25px 80px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: .25em;
+    margin-right: 1.5em;
+    transition: all 0.3s;
+}
+
+.cd-btn:nth-of-type(2) {
+    margin-right: 0;
+}
+
+.cd-btn.main-action {
+    background-color: none;
+}
+
+@media only screen and (min-width: 480px) {
+    .cd-btn {
+        padding: 1.2em 1.6em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cd-btn {
+        padding: 1.4em 1.8em;
+    }
+}
+
+.cd-intro-content h1,
+.cd-intro-content h1 span,
+.cd-intro-content p,
+.cd-intro-content .cd-btn {
+    opacity: 0;
+    -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.no-cssanimations .cd-intro-content h1,
+.no-cssanimations .cd-intro-content h1 span,
+.no-cssanimations .cd-intro-content p,
+.no-cssanimations .cd-intro-content .cd-btn {
+    opacity: 1;
+}
+
+
+/* Button 1c */
+
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    color: antiquewhite !important;
+}
+
+.btn-1c:after {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    background: red;
+    border-radius: 4px;
+}
+
+.btn-1c:hover,
+.btn-1c:active {
+    color: #0e83cd;
+}
+
+.btn-1c:hover:after,
+.btn-1c:active:after {
+    width: 100%;
+}
+
+.btn:after {
     content: '';
     position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    background: red;
     z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+/* -------------------------------- 
+
+Mask 2
+
+-------------------------------- */
+
+.mask-2.cd-intro-content * {
+    /* overwrite default style */
+    opacity: 1;
+}
+
+.mask-2.cd-intro-content .content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2em 0;
+    overflow: hidden;
+}
+
+.mask-2.cd-intro-content .content-wrapper::before {
+    /* vertical bar */
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #ffffff;
+    -webkit-animation: cd-pulse 3.3s 1.3s both;
+    -moz-animation: cd-pulse 3.3s 1.3s both;
+    animation: cd-pulse 3.3s 1.3s both;
+}
+
+.no-cssanimations .mask-2.cd-intro-content .content-wrapper::before {
+    opacity: 0;
+}
+
+.mask-2.cd-intro-content .content-wrapper>div {
+    /* wrap the entire content */
+    position: relative;
+    z-index: 1;
+}
+
+.mask-2.cd-intro-content .content-wrapper,
+.mask-2.cd-intro-content .content-wrapper>div {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-delay: 3.1s;
+    -moz-animation-delay: 3.1s;
+    animation-delay: 3.1s;
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+
+.mask-2.cd-intro-content .content-wrapper {
+    -webkit-animation-name: cd-mask-wrapper;
+    -moz-animation-name: cd-mask-wrapper;
+    animation-name: cd-mask-wrapper;
+}
+
+.mask-2.cd-intro-content .content-wrapper>div {
+    -webkit-animation-name: cd-mask-content;
+    -moz-animation-name: cd-mask-content;
+    animation-name: cd-mask-content;
+}
+
+@-webkit-keyframes cd-mask-wrapper {
+    0% {
+        -webkit-transform: translateX(50%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes cd-mask-wrapper {
+    0% {
+        -moz-transform: translateX(50%);
+    }
+    100% {
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes cd-mask-wrapper {
+    0% {
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes cd-mask-content {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-moz-keyframes cd-mask-content {
+    0% {
+        -moz-transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(0);
+    }
+}
+
+@keyframes cd-mask-content {
+    0% {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes cd-pulse {
+    0%,
+    30.8% {
+        opacity: 0;
+    }
+    15.4%,
+    46.2%,
+    61.5%,
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cd-pulse {
+    0%,
+    30.8% {
+        opacity: 0;
+    }
+    15.4%,
+    46.2%,
+    61.5%,
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cd-pulse {
+    0%,
+    30.8% {
+        opacity: 0;
+    }
+    15.4%,
+    46.2%,
+    61.5%,
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes bobble {

@@ -8,6 +8,7 @@ $(document).ready(function() {
             });
         }
     });
+
     var video = $("#bgvid"),
         pageWidth = document.body.clientWidth,
         pageHeight = document.body.clientHeight,
@@ -15,9 +16,18 @@ $(document).ready(function() {
     button = $(".btn-get-started");
     $('.tlt').textillate({ in: { effect: 'bounceInRight' } });
 
-    function changeAnimation() {
-        header.removeClass("tlt");
-        header.css("animation", "bobble 3s infinite");
+    function fadeIn() {
+        $("#titleP").fadeIn("slow", function() {
+            $("#titleP").css("display", "inherit");
+        });
     }
-    setInterval(changeAnimation, 4000);
+
+    setTimeout(fadeIn, 5000);
+    /*
+        function changeAnimation() {
+            header.removeClass("tlt");
+            header.css("animation", "bobble 3s infinite");
+        }
+        setInterval(changeAnimation, 4000);
+        */
 });
