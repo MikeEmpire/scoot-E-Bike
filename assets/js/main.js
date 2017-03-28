@@ -1,7 +1,9 @@
 $(document).ready(function() {
     $(window).scroll(function() {
         if ($(window).scrollTop() < 450) {
-            $(".text-wrapper").css("display", "none");
+            $(".text-wrapper").fadeOut(function() {
+                $(".text-wrapper").css("display", "none");
+            });
         } else {
             $('.text-wrapper').fadeIn("slow", function() {
                 $(".text-wrapper").css("display", "inherit");
