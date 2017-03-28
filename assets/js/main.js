@@ -14,8 +14,14 @@ $(document).ready(function() {
     var video = $("#bgvid"),
         pageWidth = document.body.clientWidth,
         pageHeight = document.body.clientHeight,
-        header = $("#titleText");
-    button = $(".btn-get-started");
+        header = $("#titleText"),
+        button = $(".btn-get-started");
+    $(".cd-btn").hover(function() {
+        $('#cart').fadeIn("slow", function() {
+            $("#cart").css("display", "inherit");
+        });
+    });
+
     $('.tlt').textillate({ in: { effect: 'bounceInRight' } });
 
     function fadeIn() {
