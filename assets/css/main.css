@@ -225,6 +225,10 @@ span#cart.glyphicon-shopping-cart {
     position: absolute;
     top: 41%;
     right: 11%;
+    -webkit-animation: updown 5s infinite;
+    -moz-animation: updown 5s infinite;
+    -o-animation: updown 5s infinite;
+    animation: updown 5s infinite;
 }
 
 .cd-intro-content {
@@ -819,9 +823,77 @@ svg {
     }
 }
 
+#parallaxPage {
+    height: 70em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%
+}
+
+.parallax_group {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#parallaxPage {
+    background: url('../images/black-background-1583.jpg');
+    height: 500px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%
+}
+
+.parallax_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform-origin-x: 100%;
+    transform-origin-x: 100%;
+}
+
+#parallax_layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: -1;
+}
+
+.blackbar {
+    border-radius: 25px;
+    height: 80%;
+    width: 10px;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#blackbar1 {
+    right: 9%;
+    bottom: 0;
+}
+
+#blackbar2 {
+    right: 6%;
+    bottom: 0;
+}
+
+#blackbar3 {
+    right: 3%;
+    bottom: 0;
+}
+
 #homePage {
-    background: black;
-    height: 100vw;
+    background: transparent;
+    height: 70em;
     width: 100%;
     margin: 0;
     color: white;
@@ -837,7 +909,6 @@ svg {
 }
 
 #goingGreen {
-    margin-left: 4%;
     padding-right: 0px;
     padding-left: 0px;
 }
@@ -1009,16 +1080,21 @@ figure.effect-apollo:hover p {
     transition-delay: 0.1s;
 }
 
-#leftSide {
+.featurePanel {
+    box-shadow: 50px 50px 50px 5px black;
     height: 100%;
     padding-left: 0px;
     padding-right: 0px;
 }
 
-#rightSide {}
+#leftSide1 {
+    height: 33vh;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 
-#secondRow {
-    margin-top: 6%;
+figure#rightSide.effect-apollo {
+    height: 33vh;
 }
 
 
@@ -1085,4 +1161,34 @@ figure.effect-dexter:hover p {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+.page {
+    position: relative;
+    height: 100%;
+}
+
+.popup {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.show-popup .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup>iframe {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -280px;
 }
