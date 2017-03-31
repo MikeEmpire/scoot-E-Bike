@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    $(function() {
+        $(".youtube").YouTubeModal({ autoplay: 0, width: 640, height: 480 });
+    });
     $(window).scroll(function() {
         if ($(window).scrollTop() < 450) {
             $(".text-wrapper").fadeOut(function() {
