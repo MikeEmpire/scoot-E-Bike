@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <script src="assets/js/mordernizer.custom.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    <script src="assets/js/jquery-3.2.0.min.js">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script>
         /* Open when someone clicks on the span element */
         function openNav() {
@@ -93,6 +93,9 @@
     </div>
     <div class='parallax_group' id="parallaxPage">
         <div class="parallax_layer container" id="parallax_layer--back">
+            <div class="parallax_text">
+                <p id="parallax_text_feature">Features</p>
+            </div>
             <div class='blackbar' id="blackbar1">
             </div>
             <div class='blackbar' id="blackbar2">
@@ -106,9 +109,9 @@
                     <div class="grid">
                         <figure class="effect-apollo">
                             <div class="nwOverlay"></div>
-                            <img src="assets/images/TMG.jpg" alt="img18" />
+                            <img src="assets/images/4(2).png" alt="img18" />
                             <figcaption>
-                                <h2>Going <span>Green</span></h2>
+                                <h2 class='captionTitle'>Going <span>Green</span></h2 class='captionTitle'>
                                 <p>A Carbon Emission Free Energy System</p>
                                 <a href="#0">View more</a>
                             </figcaption>
@@ -119,9 +122,9 @@
                     <div class="grid">
                         <figure class="effect-apollo">
                             <div class="nwOverlay"></div>
-                            <img src="assets/images/TMG.jpg" alt="img18" />
+                            <img src="assets/images/3(2).png" alt="img18" />
                             <figcaption>
-                                <h2>Portable</h2>
+                                <h2 class='captionTitle'>Portable</h2 class='captionTitle'>
                                 <p>Ultra lightweight. Incredibly strong, and Agile. Engineered for incredible durability. Carry it around everywhere you go. Fits in the trunk of your car</p>
                                 <a href="#0">View more</a>
                             </figcaption>
@@ -135,17 +138,14 @@
                         <figure class="effect-apollo">
                             <div class="nwOverlay"></div>
                             <img src="assets/images/blackbike.png" alt="All Black Scoot-E-Bike" />
-                            <div class="page">
-                                <p><a href="#media-popup" data-media="//www.youtube.com/embed/YoXa2Pl7Hk0">click me</a></p>
-
-                                <div class="popup" id="media-popup">
-                                    <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
                             <figcaption>
-                                <h2>Lithium<span>Battery</span></h2>
+                                <h2 class='captionTitle'>Lithium<span>Battery</span></h2 class='captionTitle'>
                                 <p>Battery operate & rechargable</p>
-                                <a href="#0">View more</a>
+                                <a class="youtube" href="https://www.youtube.com/watch?v=bjAc5nPLx_k" style="
+    position: absolute;
+    z-index: 15;
+    color: antiquewhite;
+">Link title</a>
                             </figcaption>
                         </figure>
                     </div>
@@ -157,9 +157,9 @@
                     <div class="grid">
                         <figure class="effect-apollo">
                             <div class="nwOverlay"></div>
-                            <img src="assets/images/TMG.jpg" alt="img18" />
+                            <img src="assets/images/IMG_1795.jpg" alt="img18" />
                             <figcaption>
-                                <h2>Bluetooth</h2>
+                                <h2 class='captionTitle'>Bluetooth</h2 class='captionTitle'>
                                 <p>Scoot-E-Bike® is Bluetooth equipped and will allow you to connect with any Bluetooth capable mobile device to enjoy music play and phone use.</p>
                                 <a href="#0">View more</a>
                             </figcaption>
@@ -170,9 +170,9 @@
                     <div class="grid">
                         <figure class="effect-apollo">
                             <div class="nwOverlay"></div>
-                            <img src="assets/images/TMG.jpg" alt="img18" />
+                            <img src="assets/images/IMG_1113.jpg" alt="img18" />
                             <figcaption>
-                                <h2>Keyless<span>Entry</span></h2>
+                                <h2 class='captionTitle'>Keyless<span>Entry</span></h2 class='captionTitle'>
                                 <p>The Scoot-E-Bike® is equipped with a keyless start and fully functional alarm system that takes your Electric bike experience to the next level.</p>
                                 <a href="#0">View more</a>
                             </figcaption>
@@ -192,8 +192,17 @@
     <script src="assets/js/jquery.twentytwenty.js "></script>
     <script src="assets/js/classie.js "></script>
     <script src="assets/js/main.js "></script>
+    <script src="assets/js/bootstrap.youtubepopup.js"></script>
     <script>
         $(window).load(function() {
+            $(function() {
+                $(".youtube").YouTubeModal({
+                    autoplay: 0,
+                    width: 640,
+                    height: 480
+                });
+            });
+
             $(".twentytwenty-container[data-orientation!='vertical' ] ").twentytwenty({
                 default_offset_pct: 0.7
             });
