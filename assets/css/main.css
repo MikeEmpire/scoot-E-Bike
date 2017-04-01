@@ -9,7 +9,7 @@ body {
 }
 
 #enterPage {
-    height: 100vh;
+    height: 70em;
 }
 
 #logo {
@@ -141,8 +141,8 @@ body {
 
 video {
     position: fixed;
-    top: 50%;
     left: 50%;
+    top: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -168,8 +168,8 @@ video {
 
 div.overlay_2 {
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 70em;
+    width: 100%;
     background: url('../images/black-horizontal-stripes.png') repeat center;
     z-index: 999;
     left: 0;
@@ -271,6 +271,8 @@ span#cart.glyphicon-shopping-cart {
 .cd-intro-content .action-wrapper>* {
     float: left;
 }
+
+.action-wrapper:hover a {}
 
 @media only screen and (min-width: 768px) {
     .cd-intro-content h1 {
@@ -639,13 +641,6 @@ Mask 2
     }
 }
 
-div.btn-container {
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    margin-top: 10%;
-}
-
 svg {
     vertical-align: middle;
 }
@@ -763,75 +758,33 @@ svg {
 
 /*----------- Large Screen --------- */
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
 
 
 /* ----------- Retina Screens ----------- */
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
 
 /* IPad Portrait */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    div.btn-container {
-        left: 37%;
-    }
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {}
 
 
 /* iPad */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 43%;
-    }
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
 
 
 /* iPad Pro */
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 45%;
-    }
-}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
 
-@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 47.5%;
-    }
-}
+@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
-@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 47.9%;
-    }
-}
-
-#parallaxPage {
-    height: 70em;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-    -webkit-perspective-origin-x: 100%;
-    perspective-origin-x: 100%
-}
+@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
 .parallax_group {
     position: relative;
@@ -852,7 +805,7 @@ svg {
 }
 
 .parallax_layer {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -864,7 +817,7 @@ svg {
 #parallax_layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
-    z-index: -1;
+    z-index: -101;
 }
 
 .parallax_text {
@@ -914,7 +867,7 @@ svg {
 
 #homePage {
     background: transparent;
-    height: 70em;
+    height: 120em;
     width: 100%;
     margin: 0;
     color: white;
@@ -1232,4 +1185,8 @@ div#thirdRow {
     top: 50px;
     left: 50%;
     margin-left: -280px;
+}
+
+#buildPage {
+    background: black;
 }
