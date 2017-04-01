@@ -1,11 +1,6 @@
 $(document).ready(function() {
 
     var video = $("#bgvid");
-    $(".cd-btn").hover(function() {
-        $('#cart').fadeIn("slow", function() {
-            $("#cart").css("display", "inherit");
-        });
-    });
 
     $('.tlt').textillate({ in: { effect: 'bounceInRight' } });
 

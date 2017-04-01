@@ -220,17 +220,6 @@ General Style
     overflow: hidden;
 }
 
-span#cart.glyphicon-shopping-cart {
-    display: none;
-    position: absolute;
-    top: 41%;
-    right: 11%;
-    -webkit-animation: updown 5s infinite;
-    -moz-animation: updown 5s infinite;
-    -o-animation: updown 5s infinite;
-    animation: updown 5s infinite;
-}
-
 .cd-intro-content {
     /* vertically align inside its parent */
     text-align: center;
@@ -271,8 +260,6 @@ span#cart.glyphicon-shopping-cart {
 .cd-intro-content .action-wrapper>* {
     float: left;
 }
-
-.action-wrapper:hover a {}
 
 @media only screen and (min-width: 768px) {
     .cd-intro-content h1 {
@@ -770,7 +757,30 @@ svg {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    #enterPage {
+        background: black;
+    }
+    #eScootPage {
+        height: 100em;
+    }
+    div.text-container h1 {
+        font-size: 5rem;
+        margin-top: 42%;
+    }
+    a.cd-btn.main-action {
+        width: 24em;
+        margin: 0;
+        font-size: small;
+        padding: 23px;
+    }
+    div#firstBuildPanel {
+        margin-left: 0%;
+    }
+    svg {
+        width: 40%;
+    }
+}
 
 
 /* iPad */
@@ -840,7 +850,7 @@ svg {
 
 .blackbar {
     border-radius: 25px;
-    height: 80%;
+    height: 50em;
     width: 10px;
     background-color: white;
     position: absolute;
@@ -848,21 +858,18 @@ svg {
 }
 
 #blackbar1 {
-    top: 40%;
+    top: 10em;
     right: 9%;
-    bottom: 0;
 }
 
 #blackbar2 {
-    top: 44%;
+    top: 12em;
     right: 6%;
-    bottom: 0;
 }
 
 #blackbar3 {
     right: 3%;
-    bottom: 0;
-    top: 43%;
+    top: 11em;
 }
 
 #homePage {
@@ -1152,41 +1159,43 @@ div#thirdRow {
     margin-bottom: 10%;
 }
 
-.page {
-    position: absolute;
-    width: 10em;
-    height: 10em;
-    top: 48%;
-    font-size: xx-large;
-    z-index: 14;
-    left: 50%;
-}
-
-.popup {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s ease;
-}
-
-.show-popup .popup {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup>iframe {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    margin-left: -280px;
-}
-
 #buildPage {
     background: black;
+}
+
+#eScootPage {
+    background: url('../images/155-min.jpg');
+    height: 50em;
+    width: 100%;
+    margin: 0;
+    color: white;
+}
+
+#firstBuildPanel {
+    margin-left: 14%;
+}
+
+.buildPanel {
+    background: black;
+    text-align: center;
+    border-radius: 10px;
+}
+
+div.buildPanel h1,
+h3 {
+    font-size: large;
+    padding-left: 13px;
+    text-align: left;
+}
+
+div.buildPanel:first-child {
+    padding-top: 1em;
+}
+
+.buildPanel hr {
+    width: 40%
+}
+
+.buildPanel p {
+    padding: 2em;
 }
