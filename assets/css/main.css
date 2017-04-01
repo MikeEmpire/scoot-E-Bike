@@ -9,7 +9,7 @@ body {
 }
 
 #enterPage {
-    height: 100vh;
+    height: 70em;
 }
 
 #logo {
@@ -141,8 +141,8 @@ body {
 
 video {
     position: fixed;
-    top: 50%;
     left: 50%;
+    top: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -168,8 +168,8 @@ video {
 
 div.overlay_2 {
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 70em;
+    width: 100%;
     background: url('../images/black-horizontal-stripes.png') repeat center;
     z-index: 999;
     left: 0;
@@ -218,17 +218,6 @@ General Style
     /* display: table; */
     background: transparent;
     overflow: hidden;
-}
-
-span#cart.glyphicon-shopping-cart {
-    display: none;
-    position: absolute;
-    top: 41%;
-    right: 11%;
-    -webkit-animation: updown 5s infinite;
-    -moz-animation: updown 5s infinite;
-    -o-animation: updown 5s infinite;
-    animation: updown 5s infinite;
 }
 
 .cd-intro-content {
@@ -639,13 +628,6 @@ Mask 2
     }
 }
 
-div.btn-container {
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    margin-top: 10%;
-}
-
 svg {
     vertical-align: middle;
 }
@@ -763,75 +745,56 @@ svg {
 
 /*----------- Large Screen --------- */
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
 
 
 /* ----------- Retina Screens ----------- */
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
 
 /* IPad Portrait */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    div.btn-container {
-        left: 46%;
-    }
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    div.btn-container {
-        left: 37%;
+    #enterPage {
+        background: black;
+    }
+    #eScootPage {
+        height: 100em;
+    }
+    div.text-container h1 {
+        font-size: 5rem;
+        margin-top: 42%;
+    }
+    a.cd-btn.main-action {
+        width: 24em;
+        margin: 0;
+        font-size: small;
+        padding: 23px;
+    }
+    div#firstBuildPanel {
+        margin-left: 0%;
+    }
+    svg {
+        width: 40%;
     }
 }
 
 
 /* iPad */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 43%;
-    }
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
 
 
 /* iPad Pro */
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-    div.btn-container {
-        left: 45%;
-    }
-}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
 
-@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 47.5%;
-    }
-}
+@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
-@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    div.btn-container {
-        left: 47.9%;
-    }
-}
-
-#parallaxPage {
-    height: 70em;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-    -webkit-perspective-origin-x: 100%;
-    perspective-origin-x: 100%
-}
+@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
 
 .parallax_group {
     position: relative;
@@ -852,7 +815,7 @@ svg {
 }
 
 .parallax_layer {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -864,7 +827,7 @@ svg {
 #parallax_layer--back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
-    z-index: -1;
+    z-index: -101;
 }
 
 .parallax_text {
@@ -887,7 +850,7 @@ svg {
 
 .blackbar {
     border-radius: 25px;
-    height: 80%;
+    height: 50em;
     width: 10px;
     background-color: white;
     position: absolute;
@@ -895,26 +858,23 @@ svg {
 }
 
 #blackbar1 {
-    top: 40%;
+    top: 10em;
     right: 9%;
-    bottom: 0;
 }
 
 #blackbar2 {
-    top: 44%;
+    top: 12em;
     right: 6%;
-    bottom: 0;
 }
 
 #blackbar3 {
     right: 3%;
-    bottom: 0;
-    top: 43%;
+    top: 11em;
 }
 
 #homePage {
     background: transparent;
-    height: 70em;
+    height: 120em;
     width: 100%;
     margin: 0;
     color: white;
@@ -1199,37 +1159,43 @@ div#thirdRow {
     margin-bottom: 10%;
 }
 
-.page {
-    position: absolute;
-    width: 10em;
-    height: 10em;
-    top: 48%;
-    font-size: xx-large;
-    z-index: 14;
-    left: 50%;
+#buildPage {
+    background: black;
 }
 
-.popup {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
+#eScootPage {
+    background: url('../images/155-min.jpg');
+    height: 50em;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s ease;
+    margin: 0;
+    color: white;
 }
 
-.show-popup .popup {
-    opacity: 1;
-    visibility: visible;
+#firstBuildPanel {
+    margin-left: 14%;
 }
 
-.popup>iframe {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    margin-left: -280px;
+.buildPanel {
+    background: black;
+    text-align: center;
+    border-radius: 10px;
+}
+
+div.buildPanel h1,
+h3 {
+    font-size: large;
+    padding-left: 13px;
+    text-align: left;
+}
+
+div.buildPanel:first-child {
+    padding-top: 1em;
+}
+
+.buildPanel hr {
+    width: 40%
+}
+
+.buildPanel p {
+    padding: 2em;
 }
