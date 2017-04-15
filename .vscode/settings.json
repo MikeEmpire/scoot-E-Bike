@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// Place your settings in this file to overwrite default and user settings.
+>>>>>>> 5eb73bad9c38b1d25f41385ef766e5d42c49bded
 {
     "eslint.enable": false,
     "jshint.enable": false,
