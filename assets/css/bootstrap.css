@@ -8354,12 +8354,6 @@ input[type="checkbox"] {
     font-weight: 300;
 }
 
-.close {
-    opacity: 0.4;
-    text-decoration: none;
-    text-shadow: none;
-}
-
 .close:hover,
 .close:focus {
     opacity: 1;
@@ -8435,5 +8429,5 @@ input[type="checkbox"] {
 }
 
 .modal .close {
-    color: #222222;
+    color: white;
 }

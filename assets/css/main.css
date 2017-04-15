@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans+Condensed:300|Oswald:300,400');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento|Amaranth');
 @font-face {
     font-family: 'Molot';
     src: url('../fonts/Molot.otf') format('opentype');
@@ -730,72 +731,6 @@ svg {
     }
 }
 
-
-/*--------- Media query for video background -------------*/
-
-@media screen and (max-device-width: 800px) {
-    html {
-        background: url(../images/bikes.png) #000 no-repeat center center fixed;
-    }
-    #bgvid {
-        display: none;
-    }
-}
-
-
-/*----------- Large Screen --------- */
-
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
-
-
-/* ----------- Retina Screens ----------- */
-
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
-
-
-/* IPad Portrait */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    #enterPage {
-        background: black;
-    }
-    #eScootPage {
-        height: 100em !important;
-    }
-    div.text-container h1 {
-        font-size: 5rem;
-        margin-top: 42%;
-    }
-    a.cd-btn.main-action {
-        width: 24em;
-        margin: 0;
-        font-size: small;
-        padding: 23px;
-    }
-    div#firstBuildPanel {
-        margin-left: 0%;
-    }
-    svg {
-        width: 40%;
-    }
-}
-
-
-/* iPad */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
-
-
-/* iPad Pro */
-
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
-
-@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
-
-@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
-
 .parallax_group {
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -842,10 +777,12 @@ svg {
 }
 
 #parallax_text_feature {
-    font-size: 7em;
-    color: skyblue;
+    font-size: 5em;
+    color: orangered;
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(30px) scale(1);
+    font-family: 'Molot', sans-serif;
+    letter-spacing: 5px;
 }
 
 .blackbar {
@@ -1160,12 +1097,39 @@ div#thirdRow {
 }
 
 #buildPage {
-    background: black;
+    background: black url(../images/scootebike-2.png) no-repeat center center;
+    height: 70em;
+}
+
+#buildPage span {
+    font-size: x-large;
+    display: inherit;
+}
+
+#buildPage h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    padding: 10%;
+}
+
+#quote p.lead {
+    line-height: 30px;
+    margin-top: 110%;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+}
+
+#quote span {
+    display: inline;
+    color: darksalmon;
+    font-family: 'quattrocentro', sans-serif;
 }
 
 #eScootPage {
     background: url('../images/155-min.jpg');
-    height: 50em;
+    height: 60em;
     width: 100%;
     margin: 0;
     color: white;
@@ -1193,16 +1157,24 @@ div.buildPanel:first-child {
 }
 
 .buildPanel hr {
-    width: 40%
+    width: 50%;
+    position: relative;
+    text-align: left;
+    margin-left: 1%;
+    border-radius: 50px;
 }
 
 .buildPanel p {
     padding: 2em;
 }
 
+#panelRow h1.panelHeader {
+    font-size: x-large;
+}
+
 #specPage {
-    background: transparent;
-    height: 50em;
+    background: black;
+    height: 70em;
     width: 100%;
     margin: 0;
     color: white;
@@ -1212,101 +1184,111 @@ div.buildPanel:first-child {
     width: 50%;
 }
 
+#specPage h1 {
+    font-family: 'Molot', sans-serif;
+    letter-spacing: 0.2em;
+}
 
-/* The Modal (background) */
+ul.list-unstyled.specText {
+    padding-top: 10%;
+    font-family: 'Oswald', sans-serif;
+}
 
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Black w/ opacity */
+.specText li {
+    padding-top: 11%;
+}
+
+#eScootPage h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1#pageTitle {
+    font-family: 'Molot', sans-serif;
+}
+
+div#panelRow {
+    margin-top: 10%;
+}
+
+div#panelTitle {
+    margin-top: 5%;
+}
+
+h3.shippingText {
+    font-family: 'molot', sans-serif;
+    font-size: x-large;
+    color: red;
 }
 
 
-/* Modal Content (image) */
+/*--------- Media query for video background -------------*/
 
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-
-/* Caption of Modal Image */
-
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-
-/* Add Animation */
-
-.modal-content,
-#caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
+@media screen and (max-device-width: 800px) {
+    html {
+        background: url(../images/bikes.png) #000 no-repeat center center fixed;
     }
-    to {
-        -webkit-transform: scale(1)
+    #bgvid {
+        display: none;
     }
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0.1)
+    #buildPage h1 {
+        font-size: small;
     }
-    to {
-        transform: scale(1)
+    #quote p.lead {
+        font-size: x-small;
+        line-height: 18px;
     }
 }
 
 
-/* The Close Button */
+/*----------- Large Screen --------- */
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+
+/* ----------- Retina Screens ----------- */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
+
+/* IPad Portrait */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    #enterPage {
+        background: black;
+    }
+    #eScootPage {
+        height: 100em !important;
+    }
+    div.text-container h1 {
+        font-size: 5rem;
+        margin-top: 42%;
+    }
+    a.cd-btn.main-action {
+        width: 24em;
+        margin: 0;
+        font-size: small;
+        padding: 23px;
+    }
+    div#firstBuildPanel {
+        margin-left: 0%;
+    }
+    svg {
+        width: 40%;
+    }
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+
+/* iPad */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
+
+
+/* iPad Pro */
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}
+
+@media screen and (min-device-width: 1600px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
+@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
